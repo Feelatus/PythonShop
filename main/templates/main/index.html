@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+      <div class="logo"><h2>Logo</h2></div>
+      <div class="nav">
+        <a href="{% url 'home' %}" class="nav_link">Home</a>
+        <a href="{% url 'catalog' %}" class="nav_link">Catalog</a>
+        <a href="" class="nav_link">About</a>
+      </div>
+      <div class="acc">Account</div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    
+    <footer>
+      <p>Design bye bye</p>
+    </footer>
+
+
+</body>
+</html>

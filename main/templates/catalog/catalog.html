@@ -1,0 +1,21 @@
+{% extends "main/index.html" %}
+{% load static %}
+{% block content %}
+{% for category in category %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/catalog.css' %}">
+<div class="page">
+  <h3 class="cat_name">{{ category.name }}</h3>
+<div class="container">
+{% for product in category.products.all %}
+  <div class="prod_item">
+    <img class="item_img" src="{{ product.image.url }}" alt="" >
+    <h3>{{ product.name }}</h3>
+    <p> {{ product.description }}</p>
+    <h3>{{ product.price }}</h3>
+  </div>
+  {% endfor %}
+</div>
+  {% endfor %}
+</div>
+
+{% endblock %}

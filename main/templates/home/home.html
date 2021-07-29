@@ -1,0 +1,27 @@
+{% extends "main/index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+<div class="container">
+  <div class="slider">
+    <a href="{{ sliderhome.link }}">
+      <div class="slide_item">
+        {% for sliderhome in sliderhome %}
+        <div class="item">
+          <p class="slide_txt">{{ sliderhome.description}}</p>
+          <img class="item_img" src="{{ sliderhome.image.url }}" alt="img" >
+        </div>
+        {% endfor %}
+      </div>
+    </a>
+    <a class="previous" onclick="previousSlide()">&#10094;</a>
+    <a class="next" onclick="nextSlide()">&#10095;</a>
+    <script src="{% static 'js/slider.js' %}"></script>
+
+
+  </div>
+</div>
+
+
+{% endblock%}
